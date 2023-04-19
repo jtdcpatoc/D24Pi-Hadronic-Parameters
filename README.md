@@ -18,7 +18,7 @@ Then, to install:
 
 ```
 git clone https://github.com/jtdcpatoc/D24Pi-Hadronic-Parameters.git
-cd D02pipipipi_binning_scheme
+cd D24Pi-Hadronic-Parameters
 mkdir build
 cd build
 cmake ..
