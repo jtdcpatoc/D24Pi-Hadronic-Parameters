@@ -5,4 +5,8 @@ This purpose of this code is to calculate the Hadronic parameters for a given bi
 
 # Setup
 
+- cmake version 3
+- C++ compiler with C++14
+- ROOT version 6.22
+
 # Installation
