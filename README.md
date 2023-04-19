@@ -1,2 +1,8 @@
 # D02pipipipi_binning_scheme
-Binning scheme code for the D0 -> pipipipi decay, based on Hyperplot by Sam Harnew and examples by Xiaodong Shi. Provided by Martin Tat.
+Code which, mainly, is for the D -> pipipipi decay. However, there are two examples for D -> KKpipi.Based on Hyperplot by Sam Harnew and examples by Xiaodong Shi. Provided by Martin Tat.
+
+This purpose of this code is to calculate the Hadronic parameters for a given binning scheme using MC integration of flat phase-space events. There are also scripts that are able to bin simulated data - in preperation for fitting to get measurements of the charm mixing parameters.
+
+# Setup
+
+# Installation
