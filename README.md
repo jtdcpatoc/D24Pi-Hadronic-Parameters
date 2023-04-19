@@ -24,3 +24,6 @@ cd build
 cmake ..
 make install -j 4
 ```
+
+# Installation
+The executables are located in `build/examples`.
