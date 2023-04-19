@@ -10,3 +10,12 @@ This purpose of this code is to calculate the Hadronic parameters for a given bi
 - ROOT version 6.22
 
 # Installation
+
+```
+git clone git@github.com:MartinDuyTat/D02pipipipi_binning_scheme.git
+cd D02pipipipi_binning_scheme
+mkdir build
+cd build
+cmake ..
+make install -j 4
+```
