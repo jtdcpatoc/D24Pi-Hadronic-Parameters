@@ -1,11 +1,10 @@
 /**
  * This is code that bins D -> KKpipi data, and calculates the bin number using KKpipi binning scheme. Based of code from Daniel Cervenkov and Martin Tat.
  * 
- * The input is a ROOT file of a BES3 binning scheme. 
+ * No input
  * 
  * Output is a ROOT file which stores, the 5D phase space point and the bin number. 
  * 
- * @param 1 Filename of binning scheme
  * 
  **/
 
