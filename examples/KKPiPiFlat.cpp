@@ -38,9 +38,6 @@ int main() {
   double Damp_Mag, DBARamp_Mag, StrongPhaseDiff, Damp_real, Damp_imag,
       DBARamp_real, DBARamp_imag, rD, m12;
 
-  std::complex<double> Damp;
-  std::complex<double> DBARamp;
-
   ////////////////////////////////////////////
 
   // Four-momentum of D in its rest frame //
@@ -94,8 +91,7 @@ int main() {
 
     Amplitude amplitude;
     std::complex<double> Damp = amplitude(myEvent, +1);
-    std::complex<double> D0_conj_Amplitude = amplitude(myEvent, -1);
-    DBARamp = D0_conj_Amplitude;
+    std::complex<double> DBARamp = amplitude(myEvent, -1);
 
     Damp_real = Damp.real();
     Damp_imag = Damp.imag();
