@@ -55,10 +55,7 @@ int main() {
 
   ////// Load binning scheme //////
 
-  TFile fOut(
-      "/home/patoc/work/DPhil1/D0_Mixing_Generator_Studies/for_jairus/"
-      "D02pipipipi_binning_scheme/ROOT_output/2M_KKPP_8bins_KKPPScheme.root",
-      "recreate");
+  TFile fOut("2M_KKPP_8bins_KKPPScheme.root", "recreate");
   TTree t1("GenEvents", "Test events binned with KKPP binning");
 
   t1.Branch("BinNumber", &BinNumber, "BinNumber/I");

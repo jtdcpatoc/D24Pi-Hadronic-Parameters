@@ -6,6 +6,16 @@
 #include<iostream>
 #include"../include/Amplitude.h"
 
+#if defined __APPLE__
+    #define D0LIB "libD0toKKpipi.dylib"
+    #define DBAR0LIB "libDbar0toKKpipi.dylib"
+#elif __linux__
+    #define D0LIB "libD0toKKpipi.so"
+    #define DBAR0LIB "libDbar0toKKpipi.so"
+#else
+#   error "Unknown compiler"
+#endif
+
 Amplitude::Amplitude(const std::string &Damplitude, const std::string &DBARamplitude) {
   void *my_lib_handle_d = dlopen(Damplitude.c_str(), RTLD_NOW);
   void *my_lib_handle_dbar = dlopen(DBARamplitude.c_str(), RTLD_NOW);
@@ -20,15 +30,8 @@ Amplitude::Amplitude(const std::string &Damplitude, const std::string &DBARampli
     return;
   }
 }
-/*
-// This is for the full D0 amplitude model 
-Amplitude::Amplitude(): Amplitude("/home/patoc/work/DPhil1/D0_Mixing_Generator_Studies/for_jairus/DC_Tuples/new3_0.1_D0-nor-4pi-mixing_CPV.so", "/home/patoc/work/DPhil1/D0_Mixing_Generator_Studies/for_jairus/DC_Tuples/new3_0.1_D0-bar-4pi-mixing_CPV.so") {
-}
-*/
 
-
-Amplitude::Amplitude(): Amplitude("/home/patoc/work/DPhil1/D0_Mixing_Generator_Studies/for_jairus/DC_Tuples/NotConj.so", "/home/patoc/work/DPhil1/D0_Mixing_Generator_Studies/for_jairus/DC_Tuples/Conj.so") {
-}
+Amplitude::Amplitude() : Amplitude(D0LIB, DBAR0LIB) {}
 
 
 std::complex<double> Amplitude::operator()(const std::vector<double> &event, const int &conj) const {
