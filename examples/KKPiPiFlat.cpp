@@ -71,6 +71,10 @@ int main() {
 
   for (Int_t n = 0; n < nevents; n++) {
 
+    if ((n % (nevents / 10)) == 0 && n) {
+        printf("%i\t(%.0f)%%\n", n, ((float) n*100) / nevents);
+    }
+
     Event event(generator.Generate());
     std::vector<TLorentzVector> P =
         PiPiPiPiMath::ConvertEventTo4Vectors(event.GetEventVector());
