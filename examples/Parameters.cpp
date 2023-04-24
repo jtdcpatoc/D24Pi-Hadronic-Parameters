@@ -98,7 +98,7 @@ int main(int argc, char *argv[]) {
 
   //____________________________________________//
 
-  int NumberBins = 5; // Number of bin pairs
+  int NumberBins = 8; // Number of bin pairs
 
   m_K = std::vector<double>(NumberBins, 0.0);
   m_Kbar = std::vector<double>(NumberBins, 0.0);
