@@ -26,6 +26,7 @@
 #include "../include/Amplitude.h"
 #include "../include/Event.h"
 #include "../include/Generator.h"
+#include "../include/indicators.hpp"
 #include "../include/PiPiPiPiMath.h"
 #include "../include/Utilities.h"
 
@@ -69,10 +70,22 @@ int main() {
 
   Int_t nevents = 2000000;
 
+  indicators::ProgressBar bar{
+      indicators::option::BarWidth{50},
+      indicators::option::Start{"["},
+      indicators::option::Fill{"■"},
+      indicators::option::Lead{"■"},
+      indicators::option::Remainder{" "},
+      indicators::option::End{"]"},
+      indicators::option::ShowPercentage{true},
+      indicators::option::ShowRemainingTime{true},
+      indicators::option::PrefixText{"Generating Events "},
+  };
+
   for (Int_t n = 0; n < nevents; n++) {
 
-    if ((n % (nevents / 10)) == 0 && n) {
-        printf("%i\t(%.0f)%%\n", n, ((float) n*100) / nevents);
+    if ((n % (nevents / 100)) == 0) {
+        bar.tick();
     }
 
     Event event(generator.Generate());
