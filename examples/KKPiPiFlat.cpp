@@ -92,10 +92,16 @@ int main() {
     // Have to do this as the AmpGen model could not calculate the CP conjugated
     // amplitudes. Pions ordered as + - + -
     std::vector<double> myEvent = event.GetEventVector();
+    std::vector<double> myEventConj = {
+      myEvent[4], myEvent[5], myEvent[6], myEvent[7],
+      myEvent[0], myEvent[1], myEvent[2], myEvent[3],
+      myEvent[12], myEvent[13], myEvent[14], myEvent[15],
+      myEvent[8], myEvent[9], myEvent[10], myEvent[11],
+    };
 
     Amplitude amplitude;
     std::complex<double> Damp = amplitude(myEvent, +1);
-    std::complex<double> DBARamp = amplitude(myEvent, -1);
+    std::complex<double> DBARamp = amplitude(myEventConj, -1);
 
     Damp_real = Damp.real();
     Damp_imag = Damp.imag();
